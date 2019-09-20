@@ -6,7 +6,7 @@ before_install:
   - docker build -t ruszczus/react-test -f ./client/Dokcerfile.dev ./client
 
 script:
-  - docker run ruszczus/react-test npm test -e CI=true -- --coverage
+  - docker run -e CI=true ruszczus/react-test npm test
 
 after_success:
   - docker build -t ruszczus/multi-client ./client
@@ -14,7 +14,7 @@ after_success:
   - docker build -t ruszczus/multi-server ./server
   - docker build -t ruszczus/multi-worker ./worker
 
-  #log in in to the docker CLI
+  # log in in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID --password-stdin"
   # take those images and push them to the docker hub
   - docker push ruszczus/multi-client
