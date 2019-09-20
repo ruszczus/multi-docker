@@ -1,0 +1,8 @@
+FROM node:alpine
+WORKDIR '/app'
+COPY ./package.json ./
+RUN npm install
+RUN chmod a+x ./node_modules/.bin/react-scripts
+RUN ls -al ./node_modules/.bin/
+COPY . .
+ENTRYPOINT ["npm", "run", "start"]
