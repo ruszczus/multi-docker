@@ -10,7 +10,7 @@ before_install:
   - docker build -t ruszczus/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true ruszczus/react-test npm test --exit
+  - docker run -e CI=true ruszczus/react-test npm run test --exit
 
 after_success:
   - docker build -t ruszczus/multi-client ./client
