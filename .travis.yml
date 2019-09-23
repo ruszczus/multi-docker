@@ -1,6 +1,5 @@
-language: generic 
 node_js:
-  - 8
+  - "stable"
 sudo: required
 
 services:
