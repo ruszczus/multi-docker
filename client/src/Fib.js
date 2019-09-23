@@ -41,7 +41,8 @@ class Fib extends Component {
   renderValues() {
     const entries = [];
 
-    for (let key in this.state.values) {
+    for (const key in this.state.values) {
+      console.log("KEY", key);
       entries.push(
         <div key={key}>
           For index {key} I calculated {this.state.values[key]}

@@ -4,4 +4,5 @@ import App from './App';
 
 it('renders without crashing', () => {
 
+console.log("Renders without crashing");
 });
