@@ -16,9 +16,7 @@ after_success:
   - docker build -t ruszczus/multi-nginx ./nginx
   - docker build -t ruszczus/multi-server ./server
   - docker build -t ruszczus/multi-worker ./worker
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
   - docker push ruszczus/multi-client
   - docker push ruszczus/multi-nginx
   - docker push ruszczus/multi-server
